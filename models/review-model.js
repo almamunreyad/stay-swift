@@ -1,23 +1,20 @@
 import mongoose, { Schema } from "mongoose";
+import { ObjectId } from "mongodb";
 
-const userSchema = new Schema({
-    name: {
-        required: true,
-        type: String
-    },
-    email: {
-        required: true,
-        type: String
-    },
-    password: {
-        required: true,
-        type: String
-    },
-    image: {
-        required: false,
-        type: String
-    }
+const reviewSchema = new Schema({
+  hotelId: {
+    required: true,
+    type: ObjectId,
+  },
+  userId: {
+    required: true,
+    type: ObjectId,
+  },
+  review: {
+    required: true,
+    type: Number,
+  },
 });
 
-
-export const userModel = mongoose.models.users ?? mongoose.model("users", userSchema);
+export const reviewModel =
+  mongoose.models.reviews ?? mongoose.model("reviews", reviewSchema);
