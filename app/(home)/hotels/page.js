@@ -2,9 +2,8 @@ import Search from "@/components/search/Search";
 import Filter from "@/components/search/Filter";
 import HotelList from "@/components/hotel/HotelList";
 
-const HotelListPage = ({
-  searchParams: { destination, checkin, checkout },
-}) => {
+const HotelListPage = async ({ searchParams }) => {
+  const { destination, checkin, checkout } = await searchParams;
   return (
     <>
       <section className="bg-[url('/hero-bg.jpg')] bg-cover bg-no-repeat bg-center pt-[100px] pb-[60px]">
